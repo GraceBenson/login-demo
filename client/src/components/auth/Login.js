@@ -9,7 +9,7 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
+      name: "",
       password: "",
       errors: {}
     };
@@ -42,7 +42,7 @@ class Login extends Component {
     e.preventDefault();
 
     const userData = {
-      email: this.state.email,
+      name: this.state.name,
       password: this.state.password
     };
 
@@ -58,7 +58,7 @@ class Login extends Component {
           <div className="col s8 offset-s2">
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
-                <b>Login</b> below
+                <b>Login</b>
               </h4>
               <p className="grey-text text-darken-1">
                 Don't have an account? <Link to="/register">Register</Link>
@@ -68,18 +68,18 @@ class Login extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
+                  value={this.state.name}
+                  error={errors.name}
+                  id="name"
+                  type="text"
                   className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
+                    invalid: errors.name || errors.namenotfound
                   })}
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="name">Username</label>
                 <span className="red-text">
-                  {errors.email}
-                  {errors.emailnotfound}
+                  {errors.name}
+                  {errors.namenotfound}
                 </span>
               </div>
               <div className="input-field col s12">
